@@ -1,0 +1,10 @@
+body:before {
+  white-space: pre;
+  content: "Error: Can't find stylesheet to import.\a   ╷\a 3 │ @import 'tailwindcss/base';\d \a   │         ^^^^^^^^^^^^^^^^^^\a   ╵\a   styles.scss 3:9  root stylesheet";
+  border-bottom: 2px solid #000;
+  margin-bottom: 1em;
+  padding: 1em;
+  font-family: Source Code Pro, SF Mono, Monaco, Inconsolata, Fira Mono, Droid Sans Mono, monospace;
+  display: block;
+}
+/*# sourceMappingURL=index.8f5890b9.css.map */

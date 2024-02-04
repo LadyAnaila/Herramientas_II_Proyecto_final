@@ -1,0 +1,426 @@
+@import "variables";
+
+/** @import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+**/
+
+* {
+  font-family: $font-family-main;
+  margin: 0;
+  padding: 0;
+}
+
+.main-general {
+
+  margin: 15%;
+}
+
+/*********************
+    MENÚ NAVEGACIÓN 
+*********************/
+.nav-main {
+  display: flex;
+  width: 100%;
+
+  .navbar-nav {
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: 50px;
+    align-items: center;
+  }
+
+  .navbar-nav .nav-item {
+    flex: 1;
+    text-align: center;
+    border-right: 2px solid rgb(255, 0, 0);
+  }
+
+  .navbar-nav .nav-item:last-child {
+    border-right: none;
+  }
+
+  .navbar-nav .nav-item,
+  .navbar-nav .nav-item.active {
+    font-weight: 600;
+  }
+
+  .navbar-nav .nav-link.active {
+    color: $contrast-color;
+  }
+
+  .navbar-nav .nav-link {
+    color: $text-color;
+    line-height: 1em;
+  }
+
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link.active:hover {
+    background-color: $text-color;
+    border-radius: 5px;
+  }
+
+  .navbar {
+    background-color: $main-color;
+  }
+
+  .navbar-brand,
+  .navbar-nav .nav-link {
+    color: $text-color;
+  }
+
+  .navbar-brand:hover,
+  .navbar-nav .nav-link:hover {
+    color: $light-color;
+    background-color: $contrast-color;
+    border-radius: 5px;
+  }
+
+}
+
+/*********************
+        INDEX
+*********************/
+.body-index {
+  background: url('../images/bg_img.jpg') no-repeat;
+  background-size: cover;
+}
+
+.body-index::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.334);
+  z-index: -1;
+}
+
+
+.grid-container {
+  width: 80%;
+  margin: auto;
+
+  @media (min-width: 676px) {
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    min-height: 30vh;
+  }
+
+  & .logo-container {
+
+    padding: 1rem;
+    size: 10%;
+
+    @media (min-width: 676px) {
+      grid-column: 1;
+      grid-row: 1;
+    }
+  }
+
+  & .logo-container img {
+    width: 20%;
+    height: auto;
+  }
+
+  & .title {
+    text-align: center;
+    margin: auto;
+    padding: 1rem;
+    font-family: $font-family-header;
+    font-size: 4rem;
+    color: $text-color;
+    background-color: rgba(219, 172, 52, 0.7);
+    color: white;
+    font-size: 2rem;
+    z-index: 3;
+
+    @media (min-width: 676px) {
+      grid-column: 2;
+      grid-row: 1;
+    }
+  }
+
+  & p {
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: $light-color;
+    font-family: $font-family-main;
+    margin-bottom: 2rem;
+    z-index: 3;
+  }
+
+  @media (min-width: 676px) {
+    .introduction1 {
+      grid-column: 1;
+      grid-row: 2;
+    }
+
+    .introduction2 {
+      grid-column: 3;
+      grid-row: 2;
+    }
+
+  }
+
+  & .footer {
+    text-align: center;
+    grid-area: footer;
+    background-color: $contrast-color;
+    color: white;
+    z-index: 1;
+  }
+}
+
+.alert {
+  color: white;
+  text-align: center;
+
+  a {
+    color: $contrast-color;
+    text-decoration: underline;
+
+    &:hover {
+      color: $contrast-light-color;
+    }
+  }
+}
+
+
+/*****************
+    GALERÍA 
+******************/
+.card-group {
+  margin: 10%;
+
+}
+
+
+@media (min-width: 767px) {
+
+  .card {
+    flex: 0 0 calc(33.333% - 4rem);
+
+  }
+
+  .card-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .card img {
+    border-radius: 0;
+  }
+
+  .card-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .card {
+    flex: 0 0 calc(33.333% - 4rem);
+    position: relative;
+    margin: 2rem;
+  }
+
+  .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15%;
+  }
+
+  .card .card-body {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $contrast-color;
+    padding: 1rem;
+    text-align: center;
+    color: white;
+    z-index: 2;
+  }
+
+  .card .card-body .card-title,
+  .card .card-body .card-text {
+    margin: 0;
+  }
+
+  .card .card-body .card-title {
+    font-size: 0.5rem;
+  }
+
+  .card .card-body .card-text {
+    font-size: 0.5rem;
+  }
+}
+
+
+
+
+/*****************
+      ARTÍCULO
+******************/
+
+
+/* Cita */
+blockquote {
+  background-color: $light-color;
+  padding: 2rem;
+  text-align: center;
+  border-top: 4px solid $contrast-light-color;
+  border-bottom: 4px solid $contrast-light-color;
+
+
+
+  @media (min-width: 676px) {
+    text-align: right;
+    border-right: 4px solid $contrast-light-color;
+    border-top: none;
+    border-bottom: none;
+    margin-left: 60%;
+
+
+  }
+
+  .quote_text {
+    font-family: $font-family-accent;
+    font-style: italic;
+    color: $contrast-color;
+  }
+
+  .quote_author {
+    color: $contrast-color;
+    font-size: 0.8rem;
+  }
+}
+
+ul {
+  padding-left: 20px;
+  color: $contrast-color;
+
+  li {
+    margin-bottom: 10px;
+  }
+}
+
+/* Enlaces */
+a {
+  color: $main-color;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $main-color, 10%;
+  }
+}
+
+
+
+/*****************
+IMÁGENES ARTÍCULO
+******************/
+.main-general {
+
+
+
+  & img {
+    max-width: 30%;
+    height: auto;
+    margin: 10% 5%;
+    max-width: 60%;
+
+
+  }
+
+  @media (min-width: 676px) {
+    .article_img_1 {
+      float: left;
+      max-width: 30%;
+    }
+
+    .article_img_2 {
+      float: right;
+      max-width: 30%;
+    }
+  }
+}
+
+
+
+
+/*****************
+      HORARIOS
+******************/
+.schedule {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid black;
+
+  td {
+    padding: 1rem;
+    border: 1px solid black;
+    text-align: center;
+
+    &.holiday {
+      background-color: $color-holiday;
+    }
+
+    &.league {
+      background-color: $color-league;
+    }
+
+    &.training {
+      background-color: $color-training;
+    }
+
+    &.free {
+      background-color: $color-free;
+    }
+
+    &.next_month {
+      color: $color-next-month;
+    }
+  }
+
+  @media (max-width: 767px) and (orientation: portrait) {
+    .schedule {
+      display: block;
+    }
+   thead tr {
+      display: none;
+    }
+  
+
+    td {
+      display: block; 
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 1rem; 
+  
+    }
+}
+}
+
+/*****************
+      FOOTER
+******************/
+.footer {
+  margin-top: 1.5rem;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+@media (min-width: 767px) {
+  .grid-container {
+    flex-direction: row;
+  }
+}
